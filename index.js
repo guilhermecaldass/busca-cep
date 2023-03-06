@@ -3,36 +3,39 @@ const b =document.querySelector('.b')
 const d =document.querySelector('.d')
 
 
+
 const getcep=(response)=>{
 
-
-    const cep=document.createElement('section')
+   
 
     const ceep=document.createElement('p')
+    ceep.className='cepInf'
     ceep.innerText=`Cep: ${response.cep}`
-    cep.appendChild(ceep)
+    d.appendChild(ceep)
 
 
     const city=document.createElement('p')
+    city.className='cepInf'
     city.innerText=`Cidade: ${response.localidade} ,${response.uf}`
-    cep.appendChild(city)
+    d.appendChild(city)
 
 
     const bairro=document.createElement('p')
+    bairro.className='cepInf'
     bairro.innerText=`Bairro: ${response.bairro}`
-    cep.appendChild(bairro)
+    d.appendChild(bairro)
 
     
     const street=document.createElement('p')
+    street.className='cepInf'
     street.innerText=`Rua: ${response.logradouro}`
-    cep.appendChild(street)
+    d.appendChild(street)
 
     const ddd=document.createElement('p')
+    ddd.className='cepInf'
     ddd.innerText=`DDD: ${response.ddd}`
-    cep.appendChild(ddd)
+    d.appendChild(ddd)
 
-
-    d.appendChild(cep)
 
 
 }
@@ -44,13 +47,21 @@ const fecthApi=async(cep)=>{
     const response =await dado.json()
     console.log(response);
 
+   
+
     getcep(response)
 
 }
 
 
-
-
-b.addEventListener('click',(e)=>{
+const ff =async(e)=>{
     e.preventDefault()
-    fecthApi(i.value)})
+    const cepInf=document.querySelectorAll('.cepInf')
+    cepInf.forEach((p)=>p.remove())
+    fecthApi(i.value)
+}
+
+
+
+
+b.addEventListener('click',ff)

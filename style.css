@@ -1,11 +1,18 @@
 body{
     text-align: center;
+    
 }
 
 .d{
     
     
-    width: 50%;
+    width: 60%;
+    height: 300px;
     margin: auto;
     background-color: rgb(196, 182, 182);
+    margin-top: 20px;
+}
+
+.cepInf{
+    padding: 5px;
 }
