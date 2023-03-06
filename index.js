@@ -37,6 +37,12 @@ const getcep=(response)=>{
     d.appendChild(ddd)
 
 
+    const btt =document.createElement('button')
+    btt.className='cepInf'
+    btt.id='bttRm'
+    btt.innerText='apagar'
+    d.appendChild(btt)
+
 
 }
 
